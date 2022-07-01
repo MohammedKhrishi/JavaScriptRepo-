@@ -1,0 +1,27 @@
+//Fibonacci sequence algorithm in Javascript 
+// Clean Js code using generators
+
+function* generateFibNumber(){
+    let previousNumber=0;
+    let nextNumber=1;
+    
+    //return both, prev and next number
+    yield previousNumber;
+    yield nextNumber;
+        
+    while (true){
+        const newNumberValue=previousNumber+nextNumber;
+        //Returns newValue
+        yield newNumberValue;
+        
+        //setting prev and next values and assign them
+        previousNumber=nextNumber;
+        nextNumber=newNumberValue;
+        
+    }
+}
+//assing a new instance object called fib from the function generateFibNumber()
+const fib=generateFibNumber();
+for(let i=0;i<20;i++){
+    console.log(fib.next().value)
+}
