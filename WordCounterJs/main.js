@@ -1,6 +1,6 @@
 
-const count = document.getElementById('count'),
-const textarea = document.getElementById('text'),
+const count = document.getElementById('count');
+const textarea = document.getElementById('text');
 const maxLength = document.getAttribute('maxlength');
 
 let textarea.oninput = function () {
