@@ -1,0 +1,4 @@
+function productofArray(array){
+    if(array.length === 0) return 1;
+    return array[0] * productofArray(array.slice(1));
+}
