@@ -1,0 +1,46 @@
+class Node{
+    constructor(value){
+        this.value=value;
+        this.next=null;
+    }
+}
+class Queue{
+    constructor(){
+        this.first=null;
+        this.last=null;
+        this.size=0;
+    }
+    
+    enqueue(value){
+        var newValue=new Node(value);
+        if(!this.first){
+            this.first=newValue;
+            this.last=newValue;
+        } else {
+            this.last.next=newValue;
+            this.last=newValue;
+        }
+        return ++this.size;
+    }
+    
+    dequeue(){
+        var temp=this.first;
+        if(!this.first) return null;
+        if(this.first===this.last){
+            this.last=null;
+        }
+        this.first=this.first.next;
+        --this.size;
+        return temp.value;
+    }
+}
+
+Que=new Queue();
+Que.enqueue("Hello")
+Que.enqueue("Hello2")
+Que.enqueue("Hello3")
+Que.enqueue("Hello4")
+Que.dequeue()
+Que.dequeue()
+Que.dequeue()
+console.log(Que)
